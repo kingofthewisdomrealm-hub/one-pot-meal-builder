@@ -4,8 +4,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Build Your One-Pot Meal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;0,9..144,700;1,9..144,400&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<p>Loading full builder…</p>
+  <div class="app">
+    <header class="hero">
+      <div class="kicker">Dinner, visually</div>
+      <h1>Build Your One-Pot Meal</h1>
+      <div class="equation">
+        <span class="eq-chip">🥦 1 lb Veggies</span>
+        <span class="eq-op">+</span>
+        <span class="eq-chip">🥩 ½ lb Protein</span>
+        <span class="eq-op">+</span>
+        <span class="eq-chip">🌶 Flavor</span>
+        <span class="eq-op">=</span>
+        <span class="eq-chip">🍲 One Delicious Pot</span>
+      </div>
+      <p class="tagline">Pick what sounds good. We’ll make sure it works together.</p>
+      <button class="btn btn-primary" id="startBtn">Build My Pot</button>
+    </header>
+
+    <div class="goals" id="goals">
+      <button class="goal" data-goal="protein">🔥 High Protein</button>
+      <button class="goal" data-goal="veggies">🥬 Maximum Veggies</button>
+      <button class="goal" data-goal="cheap">💰 Cheapest</button>
+      <button class="goal" data-goal="fast">⚡ Fastest</button>
+      <button class="goal" data-goal="delicious">😋 Most Delicious</button>
+      <button class="goal" data-goal="spicy">🌶 Spicy</button>
+      <button class="goal" data-goal="none">🧠 No Thinking</button>
+    </div>
+
+    <section class="builder" id="builder">
+      <div class="progress" id="progress"></div>
+      <div class="layout">
+        <div class="pot-col">
+          <div class="pot-wrap" id="potDrop">
+            <div class="pot-label">Drop food here</div>
+            <div class="plate empty" id="plate">
+              <div class="plate-food" id="potMix"></div>
+            </div>
+            <div class="fill-dots" id="fillDots"></div>
+            <div class="pot-status" id="potStatus">Empty pot. Start with protein.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card" id="stepCard"></div>
+          <div class="combos hidden" id="comboWrap">
+            <h3 id="comboTitle">Delicious matches</h3>
+            <p class="sub">Skip the rest of the picking. One tap fills the pot.</p>
+            <div class="combo-row" id="comboRow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="result" id="result">
+      <article class="recipe" id="recipeCard"></article>
+      <div class="gauges" id="gauges"></div>
+      <div class="extras" id="extras"></div>
+      <div class="actions">
+        <button class="btn btn-primary" id="againBtn">Build another pot</button>
+        <button class="btn btn-soft" id="tweakBtn">Change an ingredient</button>
+      </div>
+    </section>
+
+    <footer class="note">Every pot keeps the same bones: 1 lb vegetables + ½ lb protein + spices. Nutrition and price are kitchen estimates, not lab values.</footer>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
